@@ -17,6 +17,6 @@ public class TodoController {
 			HttpServletRequest req,
 			HttpServletResponse res) throws IOException{
 		PrintWriter pw=res.getWriter();
-		pw.print("hello again.");
+		pw.print("hello again");
 	}
 }
