@@ -6,17 +6,25 @@ import java.io.PrintWriter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import todo.repository.GreetRepository;
 
 
 @Controller
 public class TodoController {
+	
+	@Autowired
+	GreetRepository gr;
+	
 	@RequestMapping(value="/")
 	public void hello(
 			HttpServletRequest req,
 			HttpServletResponse res) throws IOException{
 		PrintWriter pw=res.getWriter();
-		pw.print("Hello world!!");
+		pw.print("Hello world!!\n");
+		pw.print(gr.findAll().get(0).getGreet());
 	}
 }
