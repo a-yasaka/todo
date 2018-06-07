@@ -1,5 +1,7 @@
 package todo.model;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -25,4 +27,20 @@ public class Challenge {
     @Setter
     @Getter
     private String challenge;
+    
+    @Setter
+    @Getter
+    private Date start;
+    
+    @Setter
+    @Getter
+    private Date end;
+    
+    @Setter
+    @Getter
+    private String status;
+    
+    @Setter
+    @Getter
+    private String memo;
  }
