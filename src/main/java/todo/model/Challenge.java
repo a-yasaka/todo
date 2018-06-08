@@ -30,11 +30,15 @@ public class Challenge {
     
     @Setter
     @Getter
-    private Date start;
+    private String name;
+
+    @Setter
+    @Getter
+    private Date startDate;
     
     @Setter
     @Getter
-    private Date end;
+    private Date endDate;
     
     @Setter
     @Getter
