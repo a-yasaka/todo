@@ -42,7 +42,7 @@ public class Challenge {
     
     @Setter
     @Getter
-    private String status;
+    private String state;
     
     @Setter
     @Getter

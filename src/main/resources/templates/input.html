@@ -24,7 +24,7 @@
 			</tr>
 			<tr>
 				<td><label for="endDate">期限</label></td>
-				<td><input type="date" name="endDate" th:value="${#calendars.format(execInfo.now,'yyyy-MM-dd')}" /></td>
+				<td><input type="date" name="endDate" /></td>
 			</tr>
 			<tr>
 				<td><label for="name">名前</label></td>
@@ -39,8 +39,8 @@
 				<td><textarea name="memo"></textarea></td>
 			</tr>
 			<tr>
-				<td><label for="status">Todo</label></td>
-				<td><textarea name="status"></textarea></td>
+				<td><label for="state">ステータス</label></td>
+				<td><input type="text" name="state" value="起票" /></td>
 			</tr>
 			<tr>
 				<td></td>

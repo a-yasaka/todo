@@ -23,14 +23,14 @@
 				<th>ステータス</th>
 				<th></th>
 			</tr>
-			<tr th:each="obj : ${request}">
+			<tr th:each="obj : ${challenge}">
 				<td th:text="${obj.id}"></td>
 				<td th:text="${obj.name}"></td>
 				<td th:text="${#calendars.format(obj.startDate,'yyyy/MM/dd')}"></td>
 				<td th:text="${#calendars.format(obj.endDate,'yyyy/MM/dd')}"></td>
 				<td th:utext="${obj.challenge}"></td>
 				<td th:utext="${obj.memo}"></td>
-				<td th:text="${obj.status}"></td>
+				<td th:text="${obj.state}"></td>
 				<td><a th:href="'/edit'+${obj.id}">編集</a></td>
 			</tr>
 		</table>
