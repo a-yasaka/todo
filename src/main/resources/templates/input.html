@@ -54,8 +54,10 @@
 			<tr>
 				<td><label for="state">ステータス</label></td>
 				<td>
-					<input type="text" name="state" 
-						th:value="${formModel.state} ? ${formModel.state} : '起票'" />
+					<select name="state">
+						<option value="起票">起票</option>
+						<option value="完了" th:selected="(${formModel.state} == '完了')">完了</option>
+					</select>
 				</td>
 			</tr>
 			<tr>
