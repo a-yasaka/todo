@@ -42,6 +42,10 @@ public class Challenge {
     
     @Setter
     @Getter
+    private String project;
+    
+    @Setter
+    @Getter
     private String state;
     
     @Setter
