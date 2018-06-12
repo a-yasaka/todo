@@ -12,6 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -47,6 +48,8 @@ public class TodoController {
 			ModelAndView mav,
 			@ModelAttribute("formModel") Challenge c){
 		mav.setViewName("input");
+		mav.addObject("actionName","/create");
+		mav.addObject("actionLabel","起票");
 		return mav;
 	}
 	
@@ -68,4 +71,24 @@ public class TodoController {
 		return mav;
 	}
 	
+	@RequestMapping(value="/edit/{id}")
+	public ModelAndView edit(
+			HttpServletRequest req,
+			ModelAndView mav,
+			@PathVariable long id){
+		mav.setViewName("input");
+		Challenge c=cr.findById(id);
+		mav.addObject("formModel",c);
+		mav.addObject("actionName","/update");
+		mav.addObject("actionLabel","修正");
+		return mav;
+	}
+	
+	@RequestMapping(value="/update")
+	public ModelAndView update(
+			@ModelAttribute("formModel") @Validated Challenge c){
+		cr.saveAndFlush(c);
+		ModelAndView mav=new ModelAndView("redirect:/");
+		return mav;
+	}
 }

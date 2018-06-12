@@ -8,4 +8,5 @@ import todo.model.Challenge;
 
 public interface ChallengeRepository extends JpaRepository<Challenge, String>{
 	List<Challenge> findAll();
+	Challenge findById(long id);
 }
