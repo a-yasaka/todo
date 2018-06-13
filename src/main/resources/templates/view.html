@@ -15,7 +15,7 @@
 		<table>
 			<tr>
 				<th>ID</th>
-				<th>氏名</th>
+				<th nowrap>氏名</th>
 				<th>起票日</th>
 				<th>期限</th>
 				<th>プロジェクト</th>
@@ -23,18 +23,18 @@
 				<th>メモ</th>
 				<th>ステータス</th>
 				<th>完了日</th>
-				<th></th>
+				<th nowrap></th>
 			</tr>
 			<tr th:each="obj : ${challenge}">
 				<td th:text="${obj.id}"></td>
 				<td th:text="${obj.name}"></td>
-				<td th:text="${#calendars.format(obj.startDate,'yyyy/MM/dd')}"></td>
-				<td th:text="${#calendars.format(obj.endDate,'yyyy/MM/dd')}"></td>
+				<td th:text="${#calendars.format(obj.startDate,'MM/dd')}"></td>
+				<td th:text="${#calendars.format(obj.endDate,'MM/dd')}"></td>
 				<td th:text="${obj.project}"></td>
 				<td th:utext="${obj.challenge}"></td>
 				<td th:utext="${obj.memo}"></td>
 				<td th:text="${obj.state}"></td>
-				<td th:text="${#calendars.format(obj.compDate,'yyyy/MM/dd')}"></td>
+				<td th:text="${#calendars.format(obj.compDate,'MM/dd')}"></td>
 				<td><a th:href="'/edit/'+${obj.id}">編集</a></td>
 			</tr>
 		</table>
