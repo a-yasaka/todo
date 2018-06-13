@@ -14,27 +14,27 @@
 		<h1>Todo一覧</h1>
 		<table>
 			<tr>
-				<th>ID</th>
+				<th nowrap>ID</th>
 				<th nowrap>氏名</th>
-				<th>起票日</th>
-				<th>期限</th>
-				<th>プロジェクト</th>
-				<th>Todo内容</th>
-				<th>メモ</th>
-				<th>ステータス</th>
-				<th>完了日</th>
+				<th nowrap>起票日</th>
+				<th nowrap>期限</th>
+				<th nowrap>プロジェクト</th>
+				<th nowrap>Todo内容</th>
+				<th nowrap>メモ</th>
+				<th nowrap>ステータス</th>
+				<th nowrap>完了日</th>
 				<th nowrap></th>
 			</tr>
 			<tr th:each="obj : ${challenge}">
-				<td th:text="${obj.id}"></td>
+				<td th:text="${obj.id}" nowrap></td>
 				<td th:text="${obj.name}" nowrap></td>
-				<td th:text="${#calendars.format(obj.startDate,'MM/dd')}"></td>
-				<td th:text="${#calendars.format(obj.endDate,'MM/dd')}"></td>
-				<td th:text="${obj.project}"></td>
+				<td th:text="${#calendars.format(obj.startDate,'MM/dd')}" nowrap></td>
+				<td th:text="${#calendars.format(obj.endDate,'MM/dd')}" nowrap></td>
+				<td th:text="${obj.project}" nowrap></td>
 				<td th:utext="${obj.challenge}"></td>
 				<td th:utext="${obj.memo}"></td>
-				<td th:text="${obj.state}"></td>
-				<td th:text="${#calendars.format(obj.compDate,'MM/dd')}"></td>
+				<td th:text="${obj.state}" nowrap></td>
+				<td th:text="${#calendars.format(obj.compDate,'MM/dd')}" nowrap></td>
 				<td nowrap><a th:href="'/edit/'+${obj.id}">編集</a></td>
 			</tr>
 		</table>
