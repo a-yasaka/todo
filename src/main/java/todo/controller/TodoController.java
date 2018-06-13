@@ -33,7 +33,7 @@ public class TodoController {
 			ModelAndView mav,
 			@ModelAttribute("formModel") Challenge c) throws IOException{
 		mav.setViewName("view");
-		List<Challenge> challengeList=cr.findAll();
+		List<Challenge> challengeList=cr.makeView();
 		for(int i=0;i<challengeList.size();i++){
 			challengeList.get(i).setChallenge(StringUtil.changeBr(challengeList.get(i).getChallenge()));
 			challengeList.get(i).setMemo(StringUtil.changeBr(challengeList.get(i).getMemo()));
