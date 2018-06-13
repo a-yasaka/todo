@@ -35,7 +35,7 @@
 				<td th:utext="${obj.memo}"></td>
 				<td th:text="${obj.state}"></td>
 				<td th:text="${#calendars.format(obj.compDate,'MM/dd')}"></td>
-				<td><a th:href="'/edit/'+${obj.id}" nowrap>編集</a></td>
+				<td nowrap><a th:href="'/edit/'+${obj.id}">編集</a></td>
 			</tr>
 		</table>
 		<p>
