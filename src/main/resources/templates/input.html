@@ -61,6 +61,14 @@
 				</td>
 			</tr>
 			<tr>
+				<td><label for="compDate">完了日</label></td>
+				<td>
+					<input type="date" name="compDate" 
+						th:value="${formModel.compDate} ? 
+						${#calendars.format(formModel.compDate,'yyyy-MM-dd')}" />
+				</td>
+			</tr>
+			<tr>
 				<td></td>
 				<td>
 					<input type="hidden" name="id" th:value="${formModel.id}" />

@@ -42,6 +42,10 @@ public class Challenge {
     
     @Setter
     @Getter
+    private Date compDate;
+    
+    @Setter
+    @Getter
     private String project;
     
     @Setter

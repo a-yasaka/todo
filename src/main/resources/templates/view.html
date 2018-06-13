@@ -22,6 +22,7 @@
 				<th>Todo内容</th>
 				<th>メモ</th>
 				<th>ステータス</th>
+				<th>完了日</th>
 				<th></th>
 			</tr>
 			<tr th:each="obj : ${challenge}">
@@ -33,6 +34,7 @@
 				<td th:utext="${obj.challenge}"></td>
 				<td th:utext="${obj.memo}"></td>
 				<td th:text="${obj.state}"></td>
+				<td th:text="${#calendars.format(obj.compDate,'yyyy/MM/dd')}"></td>
 				<td><a th:href="'/edit/'+${obj.id}">編集</a></td>
 			</tr>
 		</table>
