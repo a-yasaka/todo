@@ -18,9 +18,15 @@
 	    		border: 1px solid #d6d6d6;
 	    		border-collapse: collapse;
 			}
+			.complete {
+				background-color: lightgray;
+			}
 			td {
 	    		border: 1px solid #d6d6d6;
 	    		padding: 5px;
+			}
+			.alert {
+				color: red;
 			}
 			th {
 	    		border: 1px solid #d6d6d6;
@@ -38,13 +44,14 @@
 				<th nowrap>メモ</th>
 				<th nowrap>ステータス</th>
 				<th nowrap>完了日</th>
-				<th nowrap></th>
+				<th nowrap>操作</th>
 			</tr>
-			<tr th:each="obj : ${challenge}">
+			<tr th:each="obj : ${challenge}" th:class="${obj.state}=='完了' ? 'complete'">
 				<td th:text="${obj.id}" nowrap></td>
 				<td th:text="${obj.name}" nowrap></td>
 				<td th:text="${#calendars.format(obj.startDate,'MM/dd')}" nowrap></td>
-				<td th:text="${#calendars.format(obj.endDate,'MM/dd')}" nowrap></td>
+				<td th:text="${#calendars.format(obj.endDate,'MM/dd')}" nowrap 
+					th:class="${obj.state}=='完了' ? '' : (${#calendars.format(obj.endDate,'yyyyMMdd')} ? (${#calendars.format(obj.endDate,'yyyyMMdd')} < ${#calendars.format(execInfo.now,'yyyyMMdd')} ? 'alert'))"></td>
 				<td th:text="${obj.project}" nowrap></td>
 				<td th:utext="${obj.challenge}"></td>
 				<td th:utext="${obj.memo}"></td>
