@@ -31,17 +31,16 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr th:each="obj : ${challenge}" th:class="${obj.state}=='完了' ? 'complete'">
-					<td th:text="${obj.id}" nowrap></td>
-					<td th:text="${obj.name}" nowrap></td>
-					<td th:text="${#calendars.format(obj.startDate,'MM/dd')}" nowrap></td>
-					<td th:text="${#calendars.format(obj.endDate,'MM/dd')}" nowrap 
-						th:class="${obj.state}=='完了' ? '' : (${#calendars.format(obj.endDate,'yyyyMMdd')} ? (${#calendars.format(obj.endDate,'yyyyMMdd')} < ${#calendars.format(execInfo.now,'yyyyMMdd')} ? 'alert'))"></td>
-					<td th:text="${obj.project}" nowrap></td>
+				<tr th:each="obj : ${challenge}">
+					<td th:text="${obj.id}"></td>
+					<td th:text="${obj.name}"></td>
+					<td th:text="${#calendars.format(obj.startDate,'MM/dd')}"></td>
+					<td th:text="${#calendars.format(obj.endDate,'MM/dd')}"></td>
+					<td th:text="${obj.project}"></td>
 					<td th:utext="${obj.challenge}"></td>
 					<td th:utext="${obj.memo}"></td>
-					<td th:text="${obj.state}" nowrap></td>
-					<td th:text="${#calendars.format(obj.compDate,'MM/dd')}" nowrap></td>
+					<td th:text="${obj.state}"></td>
+					<td th:text="${#calendars.format(obj.compDate,'MM/dd')}"></td>
 					<td nowrap><a th:href="'/edit/'+${obj.id}">編集</a></td>
 				</tr>
 			</tbody>
