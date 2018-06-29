@@ -6,7 +6,7 @@ spring:
 spring:
   profiles: dev
   datasource: 
-    url: jdbc:postgresql://localhost:5432/todo
+    url: jdbc:postgresql://localhost:5432/yakan
     username: postgres
     password: password
     driverClassName: org.postgresql.Driver
